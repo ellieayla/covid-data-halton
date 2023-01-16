@@ -38,7 +38,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         branch: main
-        file_pattern: 'result-*.csv'
+        file_pattern: 'result-*.csv sites.txt'
         commit_user_name: "github-actions[bot]" # defaults to "GitHub Actions"
         commit_user_email: actions@github.com # defaults to "actions@github.com"
         commit_author: GitHub Actions [bot] <actions@github.com> # defaults to author of the commit that triggered the run
