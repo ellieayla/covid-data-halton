@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: '17 22 * * 4'  # 22:17h UTC Thursday. Slightly later than source data updates at 4pm Eastern.
 
+permissions:
+  contents: write
+
 jobs:
   scheduled:
     runs-on: ubuntu-latest
