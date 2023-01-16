@@ -265,36 +265,22 @@ def fetch_wastewater_history_for_site(site_name):
     return parse_metric_result(result)
 
 
-if __name__ == '__main__':
-
-
-    d = [
-        1667433600000,
-        1667520000000,
-        1667606400000,
-        1667692800000,
-        1667779200000,
-        1667865600000,
-        1667952000000,
-        1668038400000,
-    ]
-
-    for row in d:
-        print(row, load_typed_value(row, 7))
-
-    
+if __name__ == '__main__':   
     sites = fetch_wastewater_site_list()
     
+    with open('sites.txt', 'w') as sitefile:
+        writer = csv.writer(sitefile)
+        for s in sites:
+            writer.writerow((s,))
+
     result_for_site = {}
 
     for site_name in sites:
         result_for_site[site_name] = list(fetch_wastewater_history_for_site(site_name))
-
 
         with open('result-{}.csv'.format(site_name), 'w') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(["DateUTC", "Value"])
             writer.writerows(result_for_site[site_name])
 
-    
-    # combined output
+    # TODO: combined output
