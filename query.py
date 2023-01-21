@@ -143,7 +143,7 @@ def load_typed_value(v, t):
     if t == 7:
         return datetime.fromtimestamp(v / 1000.0, tz=UTC).date()  # v in milliseconds utc
     if t == 3:
-        return float(v)
+        return "%.15f" % float(v)
     raise ValueError("Unknown type t for value", t, v)
 
 
