@@ -1,10 +1,10 @@
 name: Scrape latest data
 
 on:
-  push:
+  # push:
   workflow_dispatch:
-  schedule:
-    - cron: '17 22 * * 4'  # 22:17h UTC Thursday. Slightly later than source data updates at 4pm Eastern.
+  # schedule:
+  #   - cron: '17 22 * * 4'  # 22:17h UTC Thursday. Slightly later than source data updates at 4pm Eastern.
 
 permissions:
   contents: write
